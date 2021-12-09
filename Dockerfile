@@ -6,7 +6,7 @@ RUN echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/a
 RUN apt-get update
 RUN apt-get install -y kubectl
 
-RUN wget "https://releases.rancher.com/cli2/v2.2.0/rancher-linux-amd64-v2.4.13.tar.gz"
+RUN wget "https://github.com/rancher/cli/releases/download/v2.4.13/rancher-linux-amd64-v2.4.13.tar.gz"
 RUN tar -xvzf rancher-linux-amd64-v2.4.13.tar.gz
 RUN cp rancher-v2.4.13/rancher /usr/local/bin/rancher
 ADD entrypoint.sh /entrypoint.sh
