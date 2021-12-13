@@ -14,10 +14,10 @@ jobs:
   rancher_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Rancher Action
-        uses: colbyhill21/Rancher-Action@1.1
-        with:
-          args: '"get pods"'
+      - name: setup-rancher-cli
+        uses: alterrainfra/rancher-cli@v1.0.4
+        with: 
+          args: "rancher kubectl commands"
           token: ${{ secrets.RANCHER_TOKEN }}
           context: ${{ secrets.RANCHER_CONTEXT }}
           url: ${{ secrets.RANCHER_URL }}
